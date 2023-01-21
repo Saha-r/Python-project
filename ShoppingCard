@@ -1,0 +1,61 @@
+#import necessary functions
+from IPython.display import clear_output
+#global list variable
+cart = []
+
+#creat add function
+def addItem(item):
+    clear_output()
+    cart.append(item)
+    print("{} has been added.".format(item))
+    
+#removing function
+def removeItem(item):
+    clear_output()
+    try:
+        cart.remove(item)
+        print("{} has been removed.".format(item))
+    except:
+        print("sorry we could not remove that item.")
+        
+#show item
+def showcart():
+    clear_output()
+    if cart :
+        print("Here is your cart: ")
+        for item in cart:
+            print("-{}".format(item))
+    else:
+        print("Your cart is empty.")
+        
+#clear item
+def clearcart():
+    clear_output()
+    cart.clear()
+    print("Your cart is empty now.")
+    
+#main and final loop
+def main():
+    done = False
+    while not done:
+        ans = input("quit/add/remove/show/clear: ").lower()
+        #base case
+        if ans == "quit":
+            print("Thanks for using our program.")
+            showcart()
+            done = True
+        elif ans == "add":
+            item = input("what would you like to add? ").title()
+            addItem(item)
+        elif ans == "remove":
+            showcart()
+            item = input("what item would you like to remove").title()
+            removeItem(item)
+        elif ans == "show":
+            showcart()
+        elif ans == "clear":
+            clearcart()
+        else:
+            print("sorry that was not an option.")
+            
+main() 
