@@ -1,5 +1,5 @@
 
-correct_answers = ["yes", "no" , "no", "yes", "yes"]
+correct_answers = ["yes", "no", "no", "yes", "yes"]
 your_answer = []
 result =[]
 
@@ -10,24 +10,24 @@ Q3 = input("What is ..... ?").lower()
 Q4 = input("What is ..... ?").lower()
 Q5 = input("What is ..... ?").lower()
 
-your_answer = Q1 + "," + Q2 + "," + Q3 + "," + Q4 + "," + Q5
-print(your_answer)
+your_answer = [Q1, Q2, Q3, Q4, Q5]
+# print(your_answer)
 
 
 
 def check_answer(your_answer):
-    for element in your_answer:
-        if your_answer == correct_answers:
-            result = print("correct")
+    for i in range(len(correct_answers)):
+        if your_answer[i] == correct_answers[i]:
+            result.append("correct")
     
             # print("correct")
             
-        elif your_answer!= correct_answers:
-            result = print("incorrect")
-        # element++ 
+        else:
+            result.append("incorrect")
+    return result
         
 # check_answer()
-check_answer(your_answer)
+result = check_answer(your_answer)
 print(result)
 
 
