@@ -1,0 +1,9 @@
+ans = input("Enter sth to check the uppercase or lowercase of the first letter: ")
+def check_letter(ans):
+    if ans == ans.upper():
+        print("True")
+    elif ans == ans.lower():
+        print("Lower Letter is False")
+    else:
+        print("type sth!")
+check_letter(ans)
