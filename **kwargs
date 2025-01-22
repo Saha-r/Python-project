@@ -1,0 +1,7 @@
+def outputData(**kwargs):
+    print(kwargs["name"])
+    print(kwargs["num"])
+outputData(name="Sahar", num=8, b=True)   
+
+firstname = input("Enter your First name ortype nothing: ")
+lastname = input("Enter your Last name or  type nothing: ")
